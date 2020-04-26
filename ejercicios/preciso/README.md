@@ -117,3 +117,15 @@ make
 ### Paso 2 ###
 
 Una vez tenga el programa listo, ejecutelo para los casos en los cuales se van a manejar 1, 2, 4, 8 y 16 hilos y pase como valor maximo del contador el valor de 10000000. Anote en una tabla los valores asociados al numero de hilos, el valor del contador logrado con estos y el tiempo gastado para cada caso.
+
+### Resultados ###
+
+Nota: Cada hilo aumenta el contador 1 millón de veces, el número máximo del contador para los resultados es de 20.000.000
+
+| Nro hilos        | Contador           | Tiempo  |
+| ------------- |:-------------:| -----:|
+| 1  | 1.000.000 | 85 milisegundos |
+| 2  | 2.000.000 | 122 milisegundos |
+| 4  | 4.000.000 | 162 milisegundos |
+| 8  | 8.000.000 | 232 milisegundos |
+| 16 | 16.000.000 | 450 milisegundos |

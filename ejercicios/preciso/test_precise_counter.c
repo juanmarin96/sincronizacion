@@ -86,7 +86,7 @@ void* increment_count(void* unused){
     pthread_mutex_lock(&global_lock);
     int current = get(&counter);
     if(current < MAXCNT){
-       for(int i = 0; i < 10000; i++) {
+       for(int i = 0; i < 1000000; i++) {
             increment(&counter);
         }
     }
