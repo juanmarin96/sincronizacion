@@ -60,6 +60,6 @@ Luego, ejecute varias veces la aplicación dejando constante el valor máximo de
 
 Las capturas con los resultados se encuentran en la carpeta ```pantallazos/aproximado_mejorado```
 
-![fig_S](threshold.jpg)
+![treshold](threshold.png)
 
 Como se observa en la gŕafica, la tendencia en el tiempo a medida que aumenta el número del treshold parace no disminuir en la misma medida que se expone en el libro guía, sin embargo al principio del experimento se observa cierta similitud pero luego dicha tendencia es interrumpida con un aumento del tiempo.
