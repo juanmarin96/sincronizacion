@@ -133,13 +133,15 @@ make
 
 Una vez tenga el programa listo, ejecutelo para los casos en los cuales se van a manejar 1, 2, 4, 8 y 16 hilos y pase como valor maximo del contador el valor de 10000000. Anote en una tabla los valores asociados al numero de hilos, el valor del contador logrado con estos y el tiempo gastado para cada caso.
 
-Nota: Cada hilo aumenta el contador 1 millón de veces, el número máximo del contador para los resultados es de 20.000.000. Las capturas de pantalla como evidencia se encuentras en la carpeta ```pantallazos/precision```
+### Resultados ###
+
+Nota: Cada hilo aumenta el contador 1 millón de veces, el número máximo del contador para los resultados es de 20.000.000, se tiene un threshold de 1024, y una configuración de 4 cpus. Las capturas de pantalla como evidencia se encuentras en la carpeta ```pantallazos/aproximado```
 
 | Nro hilos        | Contador           | Tiempo  |
 | ------------- |:-------------:| -----:|
-| 1  | 1.000.000 | 85 milisegundos |
-| 2  | 2.000.000 | 122 milisegundos |
-| 4  | 4.000.000 | 162 milisegundos |
-| 8  | 8.000.000 | 232 milisegundos |
-| 16 | 16.000.000 | 450 milisegundos |
+| 1  | 999.424 | 53 milisegundos |
+| 2  | 1.998.848 | 71 milisegundos |
+| 4  | 3.997.696 | 113 milisegundos |
+| 8  | 7.999.488 | 188 milisegundos |
+| 16 | 15.998.976 | 333 milisegundos |
 
