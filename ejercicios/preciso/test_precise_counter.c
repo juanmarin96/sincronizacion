@@ -5,13 +5,6 @@
 #include "counter.h"
 
 
-/* structs */
-typedef struct __my_args {
-    counter_t* c;
-    int max_counter;
-} my_args;
-
-
 /* start_routine header */
 void* increment_count(void *);
 counter_t counter;

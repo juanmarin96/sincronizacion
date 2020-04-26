@@ -20,8 +20,9 @@ void decrement(counter_t *c) {
 }
 
 int get(counter_t *c) {
-    
-    return c->value;
-    
+    pthread_mutex_lock(&c->lock);
+    int val =  c->value;
+    pthread_mutex_unlock(&c->lock);
+    return val;
 }
 
