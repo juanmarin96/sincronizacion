@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     /* Initializing counter */
     
     
-    init(&counter,1024);
+    init(&counter,THRESHOLD);
     
     /* Threads handlers */
     pthread_t threads[NUMTHREADS];
@@ -79,9 +79,9 @@ void *increment_count(void* arg){
     pthread_mutex_lock(&global_lock);
     int *id = (int *)arg;
     int threadID = *id;
-    printf("pthread_id: %ld  |threadID %d\n", pthread_self(),threadID);
+  
     int current = get(&counter);
-    printf("global counter: %d\n", current);
+   
     if(current < MAXCNT){
        for(int i = 0; i < 1000000; i++) {
             update(&counter,threadID,1);

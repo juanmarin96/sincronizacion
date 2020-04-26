@@ -35,6 +35,12 @@
 
 ![fig_resultados](graficas.png)
 
+* Para el caso del contador secuencial sí que es cierto que siguen la tendencia de incrementar el tiempo a medida que aumenta el número de hilos, sin embargo para el caso del contador aproximado no se evidencia el comportamiento del libro, por el contrario sigue teniendo una tendencia a incrementar el tiempo de ejecución, lo que si se aprecia es que es sustancialmente más rápido que el contador preciso.
+
+* Actualmente hay 4 CPUs disponibles en el sistema con que se realizó el laboratorio.
+
+* EL libro guía basa sus experimentos en una configuración de CPUs, similar, podría creer que las variaciones en los resultados se deben a la implementación de los algoritmos con los que se haya realizado la prueba. En este momento no se cuenta con información concluyente sobre la diferencia en ambos resultados.
+
 6. Mejore el archivo [test_aproximate_mejorado_counter.c](./aproximado_mejorado/test_aproximate_mejorado_counter.c) (el cual se encuentra en el directorio [aproximado_mejorado](./aproximado_mejorado)) de tal modo que, además de permitir modificar el numero de hilos y el valor máximo del contador a emplear, permita modificar también el umbral o factor de apromación (S), para esto se puede basar en el ejercicio 3. De este modo los parametros serán:
    * Umbral: ```APPROXIMATION_FACTOR```
    * Valor máximo del contador: ```MAXCNT```
@@ -49,3 +55,11 @@ Según lo anterior, la forma de pasar argumentos a la aplicación será la sigui
 Luego, ejecute varias veces la aplicación dejando constante el valor máximo del contador en 10000000 y el número de hilos en 4, pero cambiando el valor del umbral a los siguientes valores: 1, 2, 4, 8, 16, 32, 64, 128, 256, 512 y 1024. ¿La gráfica sigue una tendencia similar a la mostrada en la figura **29.6** del texto guía (la cual se muestra a continuación)?
 
 ![fig_S](fig_S.jpg)
+
+### Resultados ### 
+
+Las capturas con los resultados se encuentran en la carpeta ```pantallazos/aproximado_mejorado```
+
+![fig_S](threshold.jpg)
+
+Como se observa en la gŕafica, la tendencia en el tiempo a medida que aumenta el número del treshold parace no disminuir en la misma medida que se expone en el libro guía, sin embargo al principio del experimento se observa cierta similitud pero luego dicha tendencia es interrumpida con un aumento del tiempo.
