@@ -11,28 +11,30 @@ typedef struct __my_args {
     int max_counter;
 } my_args;
 
-/* start_routine header */
-void* increment_count(void* args);
 
+/* start_routine header */
+void* increment_count(void *);
+counter_t counter;
+int MAXCNT;
+int NUMTHREADS;
 /* Global variables */
 pthread_mutex_t global_lock; 
 
 int main(int argc, char *argv[]) { 
-    printf("hola");
     pthread_mutex_init(&global_lock, NULL);
-    int MAXCNT = atoi(argv[1]);
-    int NUMTHREADS = atoi(argv[2]);
+    MAXCNT = atoi(argv[1]);
+    NUMTHREADS = atoi(argv[2]);
     
     
     /* Declaration of struct timeval variables */
     struct timeval start, end;
-    double time;
+    long time;
     
     /* Initializing counter */
-    counter_t* counter = malloc(sizeof(*counter));
+    
     
     init(&counter);
-    my_args args = {c : &counter, max_counter: MAXCNT };
+    //my_args args = {c : &counter, max_counter: MAXCNT };
     
     /* Threads handlers */
     pthread_t threads[NUMTHREADS];
@@ -48,7 +50,7 @@ int main(int argc, char *argv[]) {
 
     /* Creating a Threads */
     for(int i = 0; i < NUMTHREADS; i++){
-        pthread_create(&threads[i], NULL, &increment_count,&args);
+        pthread_create(&threads[i], NULL, &increment_count,NULL);
     }
    
 
@@ -65,30 +67,28 @@ int main(int argc, char *argv[]) {
 
 
     /* get the end time */
-    //gettimeofday(&end, NULL);
+    gettimeofday(&end, NULL);
     
 
     /* get the elapset time (end_time - start_time) */
-    //time = (end.tv_sec - start.tv_sec)*1000 + (end.tv_usec - start.tv_usec)/1000.0;
+    time = (end.tv_usec - start.tv_usec)/1000.0;
 
 
     /* print the results (number threads employed, counter value, elasep time) */
-    printf("Nro hilos: %d | contador: %d | tiempo:\n",NUMTHREADS, end_count);
+    printf("Nro hilos: %d | contador: %d | tiempo: %ld milisegundos \n",NUMTHREADS, end_count, time);
 
 
     return 0;
 }
 
 /* start_routine definition */
-void* increment_count(void* arg){
+void* increment_count(void* unused){
     pthread_mutex_lock(&global_lock);
-    my_args args = *(my_args *)arg;
-    int current = get(args.c);
-    printf("current %d\n",current);
-    if(current < args.max_counter){
+    int current = get(&counter);
+    if(current < MAXCNT){
        for(int i = 0; i < 10000; i++) {
-           increment(args.c);
-       }
+            increment(&counter);
+        }
     }
     pthread_mutex_unlock(&global_lock);
 }
