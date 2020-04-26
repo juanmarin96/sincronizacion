@@ -120,7 +120,7 @@ Una vez tenga el programa listo, ejecutelo para los casos en los cuales se van a
 
 ### Resultados ###
 
-Nota: Cada hilo aumenta el contador 1 millón de veces, el número máximo del contador para los resultados es de 20.000.000
+Nota: Cada hilo aumenta el contador 1 millón de veces, el número máximo del contador para los resultados es de 20.000.000. Las capturas de pantalla como evidencia se encuentras en la carpeta ```pantallazos/precision```
 
 | Nro hilos        | Contador           | Tiempo  |
 | ------------- |:-------------:| -----:|
