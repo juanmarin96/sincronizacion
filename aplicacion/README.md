@@ -48,6 +48,10 @@ Number of remaining available books 6698
 - No olvide verificar que la funciones de la librería estándar que utiliza en cada función hilo sean *Thread Safe*.
 - Tenga en cuenta que en la implementación pueden ocurrir varias condiciones de carrera (*race conditions*), implemente los mecanimos de sincronización adecuados para garantizar que la simulación siempre se ejecute de manera correta.
 
+### RESULTADOS ###
+
+Para compilar la aplicación ubíquese en la carpeta ```aplicacion``` y ejecute el comando ```make``` para compilar la aplicación, luego ejecútela con ```./library.out```.
+
  
 
 
